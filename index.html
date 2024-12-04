@@ -3,39 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Cerco Messenger</title>
+    <title>Cerco Messenger - Accueil</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
-<body class="light-theme">
-    <!-- Barre de navigation -->
-    <header class="navbar">
-        <div class="navbar-logo">
-            <!-- Logo -->
-            <img src="logo.png" alt="Logo de Cerco Messenger" class="logo">
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto text-center py-4">
+        <div class="flex justify-end items-center mb-8">
+            <div>
+                <button id="modeButton" class="text-blue-500 hover:text-blue-700" title="Mode sombre">
+                    <i id="modeIcon" class="fas fa-moon text-2xl"></i>
+                </button>
+            </div>
         </div>
-        <nav class="navbar-menu">
-            <!-- Bouton mode clair/sombre -->
-            <button id="theme-toggle" class="theme-btn" aria-label="Changer le mode d'affichage">Mode sombre</button>
-        </nav>
-    </header>
+    </div>
 
-    <!-- Contenu principal -->
-    <main class="main-container">
-        <h1>Bienvenue sur Cerco Messenger</h1>
-        <p>N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien !</p>
-        <a href="auth.html">
-            <button class="btn primary">Se connecter / S'inscrire</button>
-        </a>
-        <div class="nav-links">
-            <a href="about.html">À propos</a>
-            <a href="contact.html">Contact</a>
+    <div id="homePage" class="container mx-auto text-center py-20">
+        <div class="mb-8">
+            <img alt="Logo de Cerco Messenger, une icône stylisée représentant la messagerie" class="mx-auto" height="200" src="https://storage.googleapis.com/a1aa/image/iS48p9t8LyIzDp6SEx3NOe9mt4zDfBL3a3f0L9RwKj0BnBvnA.jpg" width="200"/>
         </div>
-    </main>
+        <div class="mb-8 text-2xl font-bold">Bienvenue sur Cerco Messenger</div>
+        <div class="mb-8 text-lg">N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien !</div>
+        <div class="flex justify-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="showLoginForm()">Se connecter / S'inscrire</button>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2023 Cerco Messenger. Tous droits réservés.</p>
-    </footer>
+    <div id="loginForm" class="container mx-auto text-center py-20 hidden">
+        <div class="flex justify-between items-center mb-8">
+            <button class="text-blue-500 hover:underline" onclick="goBack()">Revenir à l'accueil</button>
+        </div>
+        <div class="mb-8 text-2xl font-bold">Se connecter</div>
+        <div class="mb-4">
+            <button class="text-blue-500 hover:underline" onclick="showRegisterForm()">S'inscrire</button>
+        </div>
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label for="loginUserId" class="block text-gray-700 text-sm font-bold mb-2">ID Utilisateur</label>
+                <input id="loginUserId" type="text" class="input" placeholder="ID Utilisateur">
+            </div>
+            <div class="mb-6">
+                <label for="loginPassword" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
+                <input id="loginPassword" type="password" class="input" placeholder="******************">
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="button" class="btn">Se connecter</button>
+            </div>
+        </form>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="registerForm" class="container mx-auto text-center py-20 hidden">
+        <div class="flex justify-between items-center mb-8">
+            <button class="text-blue-500 hover:underline" onclick="goBack()">Revenir à l'accueil</button>
+        </div>
+        <div class="mb-8 text-2xl font-bold">S'inscrire</div>
+        <div class="mb-4">
+            <button class="text-blue-500 hover:underline" onclick="showLoginForm()">Se connecter</button>
+        </div>
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label for="registerUserId" class="block text-gray-700 text-sm font-bold mb-2">ID Utilisateur</label>
+                <input id="registerUserId" type="text" class="input" placeholder="ID Utilisateur">
+            </div>
+            <div class="mb-4">
+                <label for="registerPassword" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
+                <input id="registerPassword" type="password" class="input" placeholder="******************">
+            </div>
+            <div class="mb-6">
+                <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirmer le mot de passe</label>
+                <input id="confirmPassword" type="password" class="input" placeholder="******************">
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="button" class="btn">S'inscrire</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
