@@ -70,12 +70,6 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* Form Section Styles */
-.form-section {
-    margin: 20px 0;
-    display: block; /* Hidden by default */
-}
-
 
 .hidden {
     display: none;
