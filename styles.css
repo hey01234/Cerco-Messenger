@@ -12,10 +12,10 @@ body {
     color: #333;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centrer tout le contenu horizontalement */
+    justify-content: center;
     padding: 20px;
     margin: 0;
-    position: relative; /* Ajouter une position relative pour que le bouton soit bien positionné */
+    position: relative;
 }
 
 a {
@@ -25,18 +25,18 @@ a {
 
 button {
     cursor: pointer;
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 /* Button Styles */
 .theme-btn {
     position: absolute;
-    top: 20px; /* Espacement depuis le haut */
-    right: 20px; /* Espacement depuis la droite */
+    top: 20px;
+    right: 20px;
     background-color: transparent;
     border: 2px solid #007bff;
     color: #007bff;
@@ -44,7 +44,7 @@ button {
     padding: 8px 16px;
     font-weight: bold;
     transition: all 0.3s ease;
-    z-index: 10; /* S'assurer que le bouton reste au-dessus du contenu */
+    z-index: 10;
 }
 
 .theme-btn:hover {
@@ -52,42 +52,35 @@ button {
     color: white;
 }
 
-/* General Button Styles */
-.btn {
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 14px 24px;
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-}
-
-.primary {
-    background-color: #007bff;
-    color: white;
-}
-
-.primary:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.back-btn {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 2px solid #ccc;
-}
-
-.back-btn:hover {
-    background-color: #ccc;
-    border-color: #007bff;
+/* Styles pour le lien avec la flèche */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
     color: #007bff;
+    margin-top: 10px;
+}
+
+.back-arrow {
+    font-size: 24px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover .back-arrow {
+    transform: translateX(-5px); /* Petite animation pour la flèche */
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
 
 /* Main Container */
 .main-container,
 .form-container {
     width: 100%;
-    max-width: 400px;  /* Limiter la largeur à 400px */
-    margin: 0 auto;  /* Centrer le contenu horizontalement */
+    max-width: 400px;
+    margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
     background-color: #fff;
@@ -95,44 +88,54 @@ button {
     border-radius: 10px;
 }
 
-/* Form Fields */
+/* Heading Styles */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
 input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 12px;
-    margin: 12px 0;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    background-color: #fafafa;
-    transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: #007bff;
-    background-color: #fff;
+}
+
+button.primary {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.primary:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Navigation Links */
-.nav-links {
-    margin-top: 20px;
-}
-
 .nav-links a {
-    margin: 0 15px;
-    font-size: 18px;
+    margin: 0 10px;
+    font-size: 16px;
     color: #007bff;
-    text-decoration: none;
 }
 
 .nav-links a:hover {
     text-decoration: underline;
-}
-
-/* Hidden Elements */
-.hidden {
-    display: none;
 }
 
 /* Theme Styles */
@@ -146,16 +149,7 @@ input[type="password"]:focus {
     color: #ddd;
 }
 
-/* Form Container Styles */
-.light-theme .form-container {
-    background-color: #fff;
-}
-
-.dark-theme .form-container {
-    background-color: #333;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
+/* Theme-specific styles for buttons */
 .light-theme .btn.primary {
     background-color: #007bff;
     color: white;
@@ -179,81 +173,13 @@ input[type="password"]:focus {
     display: none;
 }
 
-/* Animations for smooth transitions */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-body {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
 /* Responsive Design */
-
-/* Sur les petits écrans (téléphones) */
 @media screen and (max-width: 767px) {
-    body {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .theme-btn {
-        top: 10px; /* Ajuster un peu plus près du haut pour les petits écrans */
-        right: 10px; /* Garder la même position depuis la droite */
-        font-size: 14px; /* Réduire légèrement la taille du texte sur les petits écrans */
-    }
-
     .main-container,
     .form-container {
         width: 100%;
         padding: 20px 15px;
         max-width: 100%;
         box-shadow: none;
-        margin: 10px auto;
-    }
-}
-
-/* Sur les écrans de tablettes */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .main-container,
-    .form-container {
-        width: 80%;
-        padding: 30px;
-        max-width: 500px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-        margin: 0 12px;
-    }
-
-    .theme-btn {
-        top: 15px;
-        right: 15px;
-    }
-}
-
-/* Sur les grands écrans (ordinateurs de bureau) */
-@media screen and (min-width: 1024px) {
-    body {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .main-container,
-    .form-container {
-        width: 60%;
-        padding: 40px;
-        max-width: 600px;
-    }
-
-    .nav-links a {
-        font-size: 18px;
-        margin: 0 20px;
     }
 }
