@@ -34,9 +34,3 @@ function goBack() {
     document.getElementById('register-section').classList.add('hidden');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.body.classList.contains('theme-dark')) {
-        const logo = document.querySelector('.logo');
-        logo.src = 'logo-dark.png';
-    }
-});
