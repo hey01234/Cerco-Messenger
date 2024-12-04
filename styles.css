@@ -190,3 +190,109 @@ body.theme-dark .form-input:focus {
     border-color: #63b3ed;
     box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
 }
+
+/* Styles généraux pour les liens */
+a {
+    text-decoration: none; /* Supprimer la décoration par défaut */
+    color: #3182ce; /* Couleur bleue pour les liens */
+    transition: color 0.3s, text-decoration 0.3s; /* Transition fluide pour les effets */
+}
+
+a:hover, a:focus {
+    color: #2b6cb0; /* Couleur au survol */
+    text-decoration: underline; /* Sous-lignage au survol */
+}
+
+/* Styles pour les liens dans les boutons (par exemple, "Se connecter", "Revenir à l'accueil") */
+.switch-button, .back-button {
+    font-size: 1.1rem;
+    color: #3182ce;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.switch-button:hover, .back-button:hover {
+    color: #2b6cb0;
+    text-decoration: none; /* Retirer la sous-ligne lors du survol */
+}
+
+/* Pour les liens dans les formulaires */
+.form label a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form label a:hover {
+    text-decoration: underline;
+    color: #2b6cb0;
+}
+
+/* Liens en mode sombre */
+body.theme-dark a {
+    color: #63b3ed; /* Liens clairs en mode sombre */
+}
+
+body.theme-dark a:hover, body.theme-dark a:focus {
+    color: #4299e1; /* Liens plus clairs au survol en mode sombre */
+}
+
+/* Styles spécifiques aux tailles d'écran */
+@media (min-width: 768px) {
+    /* Agrandir les sections pour les écrans moyens et larges */
+    .section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 4rem;
+    }
+
+    /* Augmenter la taille des polices pour plus de lisibilité */
+    .welcome-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .welcome-text p {
+        font-size: 1.25rem;
+    }
+
+    .primary-button {
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+    }
+
+    .form {
+        max-width: 500px;
+        padding: 3rem;
+    }
+
+    .form-input {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .back-button,
+    .switch-button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Pour les très grands écrans */
+    .section {
+        max-width: 800px;
+        padding: 5rem;
+    }
+
+    .welcome-text h1 {
+        font-size: 3rem;
+    }
+
+    .welcome-text p {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        max-width: 600px;
+    }
+        }
