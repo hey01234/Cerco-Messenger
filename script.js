@@ -25,38 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Interaction pour les boutons "Se connecter" et "S'inscrire"
-const loginBtn = document.getElementById('login-btn');
-const signupBtn = document.getElementById('signup-btn');
-const loginSection = document.getElementById('login-section');
-const signupSection = document.getElementById('signup-section');
-const welcomeSection = document.getElementById('welcome-section');
-const backBtnLogin = document.getElementById('back-btn-login');
-const backBtnSignup = document.getElementById('back-btn-signup');
+// Gestion de la navigation entre les formulaires
+const loginLink = document.getElementById('login-link');
+const signupLink = document.getElementById('signup-link');
+const loginForm = document.getElementById('login-form');
+const signupForm = document.getElementById('signup-form');
 
-// Afficher le formulaire de login
-loginBtn.addEventListener('click', () => {
-    welcomeSection.classList.add('hidden');
-    loginSection.classList.remove('hidden');
-    loginSection.classList.add('active');
+// Afficher le formulaire de connexion
+loginLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginForm.classList.add('active');
+    signupForm.classList.remove('active');
 });
 
 // Afficher le formulaire d'inscription
-signupBtn.addEventListener('click', () => {
-    welcomeSection.classList.add('hidden');
-    signupSection.classList.remove('hidden');
-    signupSection.classList.add('active');
-});
-
-// Retour à la page d'accueil
-backBtnLogin.addEventListener('click', () => {
-    loginSection.classList.remove('active');
-    loginSection.classList.add('hidden');
-    welcomeSection.classList.remove('hidden');
-});
-
-backBtnSignup.addEventListener('click', () => {
-    signupSection.classList.remove('active');
-    signupSection.classList.add('hidden');
-    welcomeSection.classList.remove('hidden');
+signupLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    signupForm.classList.add('active');
+    loginForm.classList.remove('active');
 });
