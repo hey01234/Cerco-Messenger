@@ -16,14 +16,30 @@ body {
     animation: fadeOut 1s forwards;
 }
 
-/* Animation de fondu */
-@keyframes fadeOut {
+@keyframes slideOutRight {
     0% {
-        opacity: 1;
+        transform: translateX(0);
     }
     100% {
-        opacity: 0;
+        transform: translateX(-100%);
     }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slide-out-right {
+    animation: slideOutRight 1s forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s forwards;
 }
 
 /* Bouton de basculement du thème */
