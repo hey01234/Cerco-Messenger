@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Cerco Messenger</title>
+    <title>Page d'Accueil - Cerco Messenger</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="light-theme">
-    <button id="theme-toggle" class="theme-btn">Mode sombre</button>
     <div class="container">
-        <h1>Soyez les bienvenus sur <span class="highlight">Cerco Messenger</span></h1>
-        <p class="welcome-text">
-            N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien !
-        </p>
-        <a href="login.html"><button class="btn primary">Se connecter</button></a>
-        <a href="signup.html"><button class="btn secondary">S'inscrire</button></a>
+        <h1>Bienvenue sur Cerco Messenger</h1>
+        <p>N'hésitez pas à entrer en contact avec les autres, à partager et à faire de nouvelles rencontres !</p>
+
+        <button id="theme-toggle">Mode sombre</button>
+
+        <div class="buttons">
+            <a href="login.html" class="transition-link">
+                <button class="primary">Se connecter</button>
+            </a>
+            <a href="signup.html" class="transition-link">
+                <button class="secondary">S'inscrire</button>
+            </a>
+        </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
