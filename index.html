@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="light-theme">
     <div class="container">
         <header>
             <h1>Bienvenue sur <span class="highlight">Cerco Messenger</span></h1>
@@ -20,6 +20,15 @@
                 N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. 
                 Amusez-vous bien ! 👍
             </p>
+
+            <!-- Bouton de bascule -->
+            <div class="theme-toggle">
+                <label class="toggle-label">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="toggle-slider"></span>
+                </label>
+                <p id="theme-text">Mode sombre</p>
+            </div>
 
             <div class="buttons">
                 <button class="btn primary" id="login-btn">Se connecter</button>
