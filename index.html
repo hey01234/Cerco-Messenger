@@ -1,65 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cerco Messenger, votre plateforme de communication pour partager et échanger.">
-    <title>Cerco Messenger</title>
+    <title>Accueil - Cerco Messenger</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="light-theme">
+    <button id="theme-toggle" class="theme-btn">Mode sombre</button>
     <div class="container">
-        <header>
-            <h1>Bienvenue sur <span class="highlight">Cerco Messenger</span></h1>
-        </header>
-
-        <main>
-            <p class="welcome-text">
-                N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. 
-                Amusez-vous bien ! 👍
-            </p>
-
-            <!-- Bouton pour changer de thème -->
-            <button id="theme-btn" class="btn primary">Mode sombre</button>
-
-            <div class="buttons">
-                <button class="btn primary" id="login-btn">Se connecter</button>
-                <button class="btn secondary" id="signup-btn">S'inscrire</button>
-            </div>
-
-            <!-- Formulaire de connexion -->
-            <div id="login-form" class="form hidden">
-                <h2>Se connecter</h2>
-                <form action="/login" method="POST">
-                    <label for="login-id">Identifiant</label>
-                    <input type="text" id="login-id" name="id" required placeholder="Entrez votre ID">
-
-                    <label for="login-password">Mot de passe</label>
-                    <input type="password" id="login-password" name="password" required placeholder="Entrez votre mot de passe">
-
-                    <button type="submit" class="btn primary">Connexion</button>
-                </form>
-            </div>
-
-            <!-- Formulaire d'inscription -->
-            <div id="signup-form" class="form hidden">
-                <h2>Créer un compte</h2>
-                <form action="/signup" method="POST">
-                    <label for="signup-id">Identifiant</label>
-                    <input type="text" id="signup-id" name="id" required placeholder="Choisissez un ID">
-
-                    <label for="signup-password">Mot de passe</label>
-                    <input type="password" id="signup-password" name="password" required placeholder="Définissez un mot de passe">
-
-                    <button type="submit" class="btn primary">S'inscrire</button>
-                </form>
-            </div>
-        </main>
+        <h1>Soyez les bienvenus sur <span class="highlight">Cerco Messenger</span></h1>
+        <p class="welcome-text">
+            N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien !
+        </p>
+        <a href="login.html"><button class="btn primary">Se connecter</button></a>
+        <a href="signup.html"><button class="btn secondary">S'inscrire</button></a>
     </div>
-
     <script src="script.js"></script>
 </body>
-
 </html>
