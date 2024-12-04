@@ -4,79 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerco Messenger - Accueil</title>
+    <!-- Lien vers le fichier CSS -->
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <!-- Lien vers le fichier JS -->
+    <script src="script.js" defer></script>
+    <!-- Lien pour les icônes Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto text-center py-4">
-        <div class="flex justify-end items-center mb-8">
-            <div>
-                <button id="modeButton" class="text-blue-500 hover:text-blue-700" title="Mode sombre" onclick="toggleMode()">
-                    <i id="modeIcon" class="fa fa-moon text-2xl"></i>
-                </button>
-            </div>
-        </div>
-    </div>
+<body class="theme-light">
+    <!-- Header contenant le bouton pour changer le mode -->
+    <header class="header">
+        <button id="toggle-theme" class="theme-button" title="Mode sombre" onclick="toggleTheme()">
+            <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+    </header>
 
-    <div id="homePage" class="container mx-auto text-center py-20">
-        <div class="mb-8">
-            <img alt="Logo de Cerco Messenger, une icône stylisée représentant la messagerie" class="mx-auto" height="200" src="logo.png" width="200"/>
+    <!-- Section principale : Page d'accueil -->
+    <main id="homepage" class="section">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo de Cerco Messenger" class="logo">
         </div>
-        <div class="mb-8 text-2xl font-bold">Bienvenue sur Cerco Messenger</div>
-        <div class="mb-8 text-lg">N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien !</div>
-        <div class="flex justify-center">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700" onclick="showLoginForm()">Se connecter / S'inscrire</button>
+        <!-- Message de bienvenue -->
+        <div class="welcome-text">
+            <h1>Bienvenue sur Cerco Messenger</h1>
+            <p>N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien !</p>
         </div>
-    </div>
+        <!-- Bouton pour accéder aux formulaires -->
+        <button class="primary-button" onclick="showLoginForm()">Se connecter / S'inscrire</button>
+    </main>
 
-    <div id="loginForm" class="container mx-auto text-center py-20 hidden">
-        <div class="flex justify-between items-center mb-8">
-            <button class="text-blue-500 hover:underline" onclick="goBack()">Revenir à l'accueil</button>
-        </div>
-        <div class="mb-8 text-2xl font-bold">Se connecter</div>
-        <div class="mb-4">
-            <button class="text-blue-500 hover:underline" onclick="showRegisterForm()">S'inscrire</button>
-        </div>
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
-                <label for="loginUserId" class="block text-gray-700 text-sm font-bold mb-2">ID Utilisateur</label>
-                <input id="loginUserId" type="text" class="input" placeholder="ID Utilisateur">
-            </div>
-            <div class="mb-6">
-                <label for="loginPassword" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
-                <input id="loginPassword" type="password" class="input" placeholder="******************">
-            </div>
-            <div class="flex items-center justify-between">
-                <button type="button" class="btn">Se connecter</button>
-            </div>
+    <!-- Section : Formulaire de connexion -->
+    <section id="login-section" class="section hidden">
+        <button class="back-button" onclick="goBack()">Revenir à l'accueil</button>
+        <h2>Se connecter</h2>
+        <button class="switch-button" onclick="showRegisterForm()">S'inscrire</button>
+        <form class="form">
+            <label for="login-username">ID Utilisateur</label>
+            <input id="login-username" type="text" class="form-input" placeholder="ID Utilisateur">
+            
+            <label for="login-password">Mot de passe</label>
+            <input id="login-password" type="password" class="form-input" placeholder="Mot de passe">
+            
+            <button type="button" class="primary-button">Se connecter</button>
         </form>
-    </div>
+    </section>
 
-    <div id="registerForm" class="container mx-auto text-center py-20 hidden">
-        <div class="flex justify-between items-center mb-8">
-            <button class="text-blue-500 hover:underline" onclick="goBack()">Revenir à l'accueil</button>
-        </div>
-        <div class="mb-8 text-2xl font-bold">S'inscrire</div>
-        <div class="mb-4">
-            <button class="text-blue-500 hover:underline" onclick="showLoginForm()">Se connecter</button>
-        </div>
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
-                <label for="registerUserId" class="block text-gray-700 text-sm font-bold mb-2">ID Utilisateur</label>
-                <input id="registerUserId" type="text" class="input" placeholder="ID Utilisateur">
-            </div>
-            <div class="mb-4">
-                <label for="registerPassword" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
-                <input id="registerPassword" type="password" class="input" placeholder="******************">
-            </div>
-            <div class="mb-6">
-                <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirmer le mot de passe</label>
-                <input id="confirmPassword" type="password" class="input" placeholder="******************">
-            </div>
-            <div class="flex items-center justify-between">
-                <button type="button" class="btn">S'inscrire</button>
-            </div>
+    <!-- Section : Formulaire d'inscription -->
+    <section id="register-section" class="section hidden">
+        <button class="back-button" onclick="goBack()">Revenir à l'accueil</button>
+        <h2>S'inscrire</h2>
+        <button class="switch-button" onclick="showLoginForm()">Se connecter</button>
+        <form class="form">
+            <label for="register-username">ID Utilisateur</label>
+            <input id="register-username" type="text" class="form-input" placeholder="ID Utilisateur">
+            
+            <label for="register-password">Mot de passe</label>
+            <input id="register-password" type="password" class="form-input" placeholder="Mot de passe">
+            
+            <label for="confirm-password">Confirmer le mot de passe</label>
+            <input id="confirm-password" type="password" class="form-input" placeholder="Confirmer le mot de passe">
+            
+            <button type="button" class="primary-button">S'inscrire</button>
         </form>
-    </div>
+    </section>
 </body>
 </html>
