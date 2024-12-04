@@ -18,6 +18,7 @@ body {
     position: relative;
 }
 
+/* Lien et boutons */
 a {
     text-decoration: none;
     color: inherit;
@@ -29,7 +30,7 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Button Styles */
@@ -47,7 +48,9 @@ button {
 .theme-btn:hover {
     background-color: #007bff;
     color: white;
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
+
 /* Barre de navigation */
 .navbar {
     display: flex;
@@ -59,6 +62,8 @@ button {
     width: 100%;
     top: 0;
     z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour la navbar */
 }
 
 /* Logo à droite */
@@ -76,7 +81,6 @@ button {
     width: 50px;
     height: auto;
 }
-
 
 /* Styles pour le lien avec la flèche */
 .back-link {
@@ -107,10 +111,17 @@ button {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 40px 20px; /* Réduit le padding pour un look plus compact */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
     border-radius: 10px;
+    background-color: #fff; /* Fond blanc pour le conteneur principal */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-container:hover,
+.form-container:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
 }
 
 .light-theme .main-container,
@@ -129,6 +140,7 @@ button {
 h1, h2 {
     font-size: 2em;
     margin-bottom: 20px;
+    color: #007bff; /* Couleur des titres */
 }
 
 /* Form Styles */
@@ -140,11 +152,13 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ombre au focus */
 }
 
 button.primary {
@@ -153,13 +167,13 @@ button.primary {
     padding: 12px 20px;
     font-size: 16px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button.primary:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
-
 
 /* Navigation Links */
 .nav-links a {
@@ -201,7 +215,6 @@ button.primary:hover {
 .dark-theme .btn.primary:hover {
     background-color: #333;
 }
-
 
 /* Utility Classes */
 .hidden {
