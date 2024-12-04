@@ -8,7 +8,7 @@ function toggleTheme() {
         body.classList.add('theme-dark');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
-        logo.scr="logo-dark.png
+        logo.scr = "logo-dark.png"
     } else {
         body.classList.remove('theme-dark');
         body.classList.add('theme-light');
