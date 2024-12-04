@@ -83,7 +83,6 @@ button {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
-    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -123,9 +122,6 @@ button.primary:hover {
     background-color: #0056b3;
 }
 
-.hidden {
-    display: none;
-}
 
 /* Navigation Links */
 .nav-links a {
@@ -167,6 +163,7 @@ button.primary:hover {
 .dark-theme .btn.primary:hover {
     background-color: #333;
 }
+
 
 /* Utility Classes */
 .hidden {
