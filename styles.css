@@ -11,7 +11,11 @@ body {
     background-color: #f4f4f4;
     color: #333;
     width: 100%;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center; /* Centrer tout le contenu horizontalement */
+    padding: 20px;
+    margin: 0;
+    position: relative; /* Ajouter une position relative pour que le bouton soit bien positionné */
 }
 
 a {
@@ -31,8 +35,8 @@ button {
 /* Button Styles */
 .theme-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 20px; /* Espacement depuis le haut */
+    right: 20px; /* Espacement depuis la droite */
     background-color: transparent;
     border: 2px solid #007bff;
     color: #007bff;
@@ -40,6 +44,7 @@ button {
     padding: 8px 16px;
     font-weight: bold;
     transition: all 0.3s ease;
+    z-index: 10; /* S'assurer que le bouton reste au-dessus du contenu */
 }
 
 .theme-btn:hover {
@@ -80,8 +85,9 @@ button {
 /* Main Container */
 .main-container,
 .form-container {
-    max-width: 700px;  /* Limiter la largeur du contenu */
-    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;  /* Limiter la largeur à 400px */
+    margin: 0 auto;  /* Centrer le contenu horizontalement */
     padding: 40px 20px;
     text-align: center;
     background-color: #fff;
@@ -187,42 +193,67 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Forcer l'affichage en mode téléphone */
-@media screen and (min-width: 768px) {
-    /* Forcer la largeur de la page à celle d'un appareil mobile */
-    body {
-        width: 375px; /* Largeur typique d'un téléphone mobile */
-        margin: 0 auto;
-    }
+/* Responsive Design */
 
-    .main-container,
-    .form-container {
-        width: 100%; /* Utiliser toute la largeur disponible mais limitée à 375px */
-        padding: 40px 20px;
-    }
-
-    /* Pour le bouton de retour et les liens de navigation */
-    .theme-btn {
-        top: 15px;
-        right: 15px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-        margin: 0 8px;
-    }
-}
-
-/* Responsive design pour mobile */
+/* Sur les petits écrans (téléphones) */
 @media screen and (max-width: 767px) {
     body {
         width: 100%;
-        margin: 0;
+        padding: 10px;
+    }
+
+    .theme-btn {
+        top: 10px; /* Ajuster un peu plus près du haut pour les petits écrans */
+        right: 10px; /* Garder la même position depuis la droite */
+        font-size: 14px; /* Réduire légèrement la taille du texte sur les petits écrans */
     }
 
     .main-container,
     .form-container {
         width: 100%;
         padding: 20px 15px;
+        max-width: 100%;
+        box-shadow: none;
+        margin: 10px auto;
+    }
+}
+
+/* Sur les écrans de tablettes */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-container,
+    .form-container {
+        width: 80%;
+        padding: 30px;
+        max-width: 500px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        margin: 0 12px;
+    }
+
+    .theme-btn {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Sur les grands écrans (ordinateurs de bureau) */
+@media screen and (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .main-container,
+    .form-container {
+        width: 60%;
+        padding: 40px;
+        max-width: 600px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        margin: 0 20px;
     }
 }
