@@ -38,21 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const signupForm = document.getElementById('signup-form');
 
-    // Afficher le formulaire de connexion par défaut
-    loginForm.classList.add('active');
-    signupForm.classList.add('active');
+    // Afficher le formulaire de connexion par défaut, masquer celui d'inscription
+    loginForm.classList.remove('hidden');
+    signupForm.classList.add('hidden');
 
     // Ajouter l'événement pour changer de formulaire lorsqu'on clique sur "Se connecter"
     loginLink.addEventListener('click', (e) => {
         e.preventDefault();
-        loginForm.classList.add('active');
-        signupForm.classList.remove('active');
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
     });
 
     // Ajouter l'événement pour changer de formulaire lorsqu'on clique sur "S'inscrire"
     signupLink.addEventListener('click', (e) => {
         e.preventDefault();
-        signupForm.classList.add('active');
-        loginForm.classList.remove('active');
+        signupForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
     });
 });
