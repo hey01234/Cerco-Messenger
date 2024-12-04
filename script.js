@@ -66,3 +66,11 @@ document.querySelectorAll('.transition-link').forEach(link => {
         }, 1000); // Attendre que l'animation dure 1 seconde
     });
 });
+
+// Assurer que la page d'accueil se recharge correctement après redirection
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname === 'index.html') {
+        // Forcer un léger rafraîchissement si la page d'accueil est vide
+        window.location.reload();
+    }
+});
