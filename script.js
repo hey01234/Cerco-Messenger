@@ -1,14 +1,13 @@
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('theme-icon');
-    const logo = document.getElementByID('logo');
         
     if (body.classList.contains('theme-light')) {
         body.classList.remove('theme-light');
         body.classList.add('theme-dark');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
-        logo.src="logo-dark.png"
+        
     } else {
         body.classList.remove('theme-dark');
         body.classList.add('theme-light');
