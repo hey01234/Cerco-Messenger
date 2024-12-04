@@ -1,134 +1,57 @@
-/* styles.css */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.light-theme {
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-.dark-theme {
-    background-color: #333;
-    color: #f4f4f9;
-}
-
-.container {
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    width: 90%;
+/* Formulaire */
+.form-container {
     max-width: 400px;
     margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+/* Thème sombre pour formulaire */
+body.dark-theme .form-container {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
-header .highlight {
-    color: #0078d7;
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-.welcome-text {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+.form-container input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.toggle-label {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 25px;
-    margin-right: 10px;
-}
-
-.toggle-label input {
-    display: none;
-}
-
-.toggle-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.toggle-slider:before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 5px;
-    bottom: 2.5px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.3s;
-}
-
-input:checked + .toggle-slider {
-    background-color: #0078d7;
-}
-
-input:checked + .toggle-slider:before {
-    transform: translateX(25px);
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+.form-container button {
+    width: 100%;
+    padding: 10px;
     border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn.primary {
-    background-color: #0078d7;
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #005bb5;
-}
-
-.btn.secondary {
-    background-color: #f4f4f9;
-    color: #0078d7;
-    border: 2px solid #0078d7;
-}
-
-.btn.secondary:hover {
-    background-color: #e6f0fc;
-}
-
-.hidden {
-    display: none;
+.form-container button:hover {
+    background-color: #0056b3;
 }
