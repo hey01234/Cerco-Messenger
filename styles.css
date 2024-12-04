@@ -58,15 +58,6 @@ body.theme-dark .theme-button {
     height: 150px;
 }
 
-/* Cache l'image existante */
-body.theme-dark .logo {
-    display: none;
-}
-
-/* Ajoute un nouveau logo comme arrière-plan */
-body.theme-dark .logo-container {
-    background-image: url('logo-dark.png');
-}
 
 /* Texte de bienvenue */
 .welcome-text {
