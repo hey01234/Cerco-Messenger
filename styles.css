@@ -73,12 +73,9 @@ h1, h2 {
 /* Form Section Styles */
 .form-section {
     margin: 20px 0;
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
 }
 
-.form-section.active {
-    display: block; /* Display the active form */
-}
 
 .hidden {
     display: none;
