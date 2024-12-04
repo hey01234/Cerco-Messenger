@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter / S'inscrire - Cerco Messenger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <button id="theme-toggle" class="theme-btn">Mode sombre</button>
+
+    <div class="form-container">
+        <!-- Bouton retour vers l'accueil -->
+        <a href="index.html">
+            <button class="btn back-btn">Retour à l'accueil</button>
+        </a>
+
+        <!-- Liens de navigation -->
+        <div class="nav-links">
+            <a href="#login-form" id="login-link">Se connecter</a>
+            <a href="#signup-form" id="signup-link">S'inscrire</a>
+        </div>
+
+        <!-- Formulaire de Connexion -->
+        <div id="login-form" class="form-section">
+            <h2>Se connecter</h2>
+            <form action="#" method="POST">
+                <label for="user-id">ID</label>
+                <input type="text" id="user-id" name="user-id" placeholder="Entrez votre ID" required>
+
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+
+                <button type="submit" class="btn primary">Se connecter</button>
+            </form>
+        </div>
+
+        <!-- Formulaire d'Inscription -->
+        <div id="signup-form" class="form-section hidden">
+            <h2>S'inscrire</h2>
+            <form action="#" method="POST">
+                <label for="new-user-id">ID</label>
+                <input type="text" id="new-user-id" name="new-user-id" placeholder="Entrez votre ID" required>
+
+                <label for="new-password">Mot de passe</label>
+                <input type="password" id="new-password" name="new-password" placeholder="Définir un mot de passe" required>
+
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmer votre mot de passe" required>
+
+                <button type="submit" class="btn primary">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
