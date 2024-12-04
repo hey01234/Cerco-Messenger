@@ -33,45 +33,49 @@ button {
     color: white;
 }
 
-.btn.secondary {
-    background-color: #28a745;
-    color: white;
-}
-
 .btn.back-btn {
     background-color: #ccc;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
 }
 
 .hidden {
     display: none;
 }
 
-.main-container {
-    text-align: center;
-}
-
-.form-container {
-    display: none;
-    transition: transform 0.5s ease-in-out;
-}
-
-.form-container.active {
-    display: block;
-    transform: translateX(0);
-}
-
-#login-section, #signup-section {
-    display: block;
-}
-
 /* Style pour l'animation */
-.form-container.active {
+.form-section.active {
     display: block;
-    transform: translateX(0);
 }
 
 .theme-btn {
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+.main-container {
+    text-align: center;
 }
