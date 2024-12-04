@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.getElementById('signup-form');
 
     if (loginLink && signupLink && loginForm && signupForm) {
-        loginForm.classList.remove('hidden');
         signupForm.classList.add('hidden');
 
         loginLink.addEventListener('click', (e) => {
