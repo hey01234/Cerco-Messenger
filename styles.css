@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -26,4 +28,18 @@ body {
 
 .btn:hover {
     background-color: #2563eb;
+}
+
+/* Classes pour l'icône */
+.fa {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.fa-moon:before {
+    content: "\f186";
+}
+
+.fa-sun:before {
+    content: "\f185";
 }
