@@ -2,7 +2,6 @@
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('theme-icon');
-    const logo = document.querySelector('.logo'); // Sélection du logo
 
     if (body.classList.contains('theme-light')) {
         // Passage au mode sombre
@@ -10,14 +9,12 @@ function toggleTheme() {
         body.classList.add('theme-dark');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
-        logo.src = "logo-dark.png"; // Chemin vers le logo pour le mode sombre
     } else {
         // Passage au mode clair
         body.classList.remove('theme-dark');
         body.classList.add('theme-light');
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
-        logo.src = "logo.png"; // Chemin vers le logo pour le mode clair
     }
 }
 
