@@ -33,3 +33,10 @@ function goBack() {
     document.getElementById('login-section').classList.add('hidden');
     document.getElementById('register-section').classList.add('hidden');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.body.classList.contains('theme-dark')) {
+        const logo = document.querySelector('.logo');
+        logo.src = 'logo-dark.png';
+    }
+});
