@@ -1,57 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Récupérer le thème sauvegardé dans le localStorage
-    const savedTheme = localStorage.getItem('theme');
-    const themeToggleButton = document.getElementById('theme-toggle');
-
-    // Appliquer le thème sauvegardé ou par défaut (clair)
-    if (savedTheme) {
-        document.body.classList.add(savedTheme);
-        if (savedTheme === 'dark-theme') {
-            themeToggleButton.textContent = 'Mode clair';
-        } else {
-            themeToggleButton.textContent = 'Mode sombre';
-        }
+function toggleMode() {
+    const body = document.body;
+    const button = document.getElementById('modeButton');
+    const icon = document.getElementById('modeIcon');
+    if (body.classList.contains('bg-gray-100')) {
+        body.classList.remove('bg-gray-100', 'text-gray-800');
+        body.classList.add('bg-gray-800', 'text-gray-100');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        button.title = 'Mode clair';
     } else {
-        document.body.classList.add('light-theme');
-        themeToggleButton.textContent = 'Mode sombre';
+        body.classList.remove('bg-gray-800', 'text-gray-100');
+        body.classList.add('bg-gray-100', 'text-gray-800');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        button.title = 'Mode sombre';
     }
+}
 
-    // Gestion du changement de thème au clic
-    themeToggleButton.addEventListener('click', () => {
-        if (document.body.classList.contains('light-theme')) {
-            document.body.classList.remove('light-theme');
-            document.body.classList.add('dark-theme');
-            themeToggleButton.textContent = 'Mode clair';
-            localStorage.setItem('theme', 'dark-theme');
-        } else {
-            document.body.classList.remove('dark-theme');
-            document.body.classList.add('light-theme');
-            themeToggleButton.textContent = 'Mode sombre';
-            localStorage.setItem('theme', 'light-theme');
-        }
-    });
+function showLoginForm() {
+    document.getElementById('homePage').classList.add('hidden');
+    document.getElementById('loginForm').classList.remove('hidden');
+    document.getElementById('registerForm').classList.add('hidden');
+}
 
-    // Sélectionner les éléments pour les formulaires
-    const loginLink = document.getElementById('login-link');
-    const signupLink = document.getElementById('signup-link');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
+function showRegisterForm() {
+    document.getElementById('homePage').classList.add('hidden');
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registerForm').classList.remove('hidden');
+}
 
-    // Afficher le formulaire de connexion et masquer celui d'inscription au départ
-    loginForm.classList.remove('hidden');
-    signupForm.classList.add('hidden');
-
-    // Afficher le formulaire de connexion et masquer celui d'inscription lors du clic sur "Se connecter"
-    loginLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginForm.classList.remove('hidden');
-        signupForm.classList.add('hidden');
-    });
-
-    // Afficher le formulaire d'inscription et masquer celui de connexion lors du clic sur "S'inscrire"
-    signupLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        signupForm.classList.remove('hidden');
-        loginForm.classList.add('hidden');
-    });
-});
+function goBack() {
+    document.getElementById('homePage').classList.remove('hidden');
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registerForm').classList.add('hidden');
+}
