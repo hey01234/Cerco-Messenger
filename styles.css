@@ -10,6 +10,8 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     background-color: #f4f4f4;
     color: #333;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -78,20 +80,13 @@ button {
 /* Main Container */
 .main-container,
 .form-container {
-    max-width: 700px;
+    max-width: 700px;  /* Limiter la largeur du contenu */
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-}
-
-h1, h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: 600;
 }
 
 /* Form Fields */
@@ -190,4 +185,44 @@ input[type="password"]:focus {
 
 body {
     animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Forcer l'affichage en mode téléphone */
+@media screen and (min-width: 768px) {
+    /* Forcer la largeur de la page à celle d'un appareil mobile */
+    body {
+        width: 375px; /* Largeur typique d'un téléphone mobile */
+        margin: 0 auto;
+    }
+
+    .main-container,
+    .form-container {
+        width: 100%; /* Utiliser toute la largeur disponible mais limitée à 375px */
+        padding: 40px 20px;
+    }
+
+    /* Pour le bouton de retour et les liens de navigation */
+    .theme-btn {
+        top: 15px;
+        right: 15px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        margin: 0 8px;
+    }
+}
+
+/* Responsive design pour mobile */
+@media screen and (max-width: 767px) {
+    body {
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-container,
+    .form-container {
+        width: 100%;
+        padding: 20px 15px;
+    }
 }
