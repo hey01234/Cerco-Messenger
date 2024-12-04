@@ -1,5 +1,78 @@
 /* styles.css */
 
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Animation pour les pages */
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+/* Animation de fondu */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Bouton de basculement du thème */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Boutons */
+button.primary, button.secondary {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+button.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Effet au survol */
+button.primary:hover, button.secondary:hover {
+    background-color: #0056b3;
+}
+
+/* Ajoutez un effet de transition pour la page lorsqu'elle se charge */
+.transition-link {
+    display: inline-block;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
 /* Par défaut, le thème est clair */
 body.light-theme {
     background-color: white;
