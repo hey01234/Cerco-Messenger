@@ -87,6 +87,18 @@ button {
     border-radius: 10px;
 }
 
+.light-theme .main-container,
+.light-theme .form-container {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dark-theme .main-container,
+.dark-theme .form-container {
+    background-color: #181818;
+    color: #ddd;
+}
+
 /* Heading Styles */
 h1, h2 {
     font-size: 2em;
