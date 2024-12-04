@@ -1,7 +1,7 @@
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('theme-icon');
-    const logo = document.getElementByID('logo')
+    const logo = document.getElementByID('logo');
         
     if (body.classList.contains('theme-light')) {
         body.classList.remove('theme-light');
