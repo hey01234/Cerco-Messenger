@@ -42,6 +42,54 @@ function goBack() {
     document.getElementById('register-section').classList.add('hidden'); // Cache la section inscription
 }
 
+// Fonction de validation du formulaire de connexion
+function validateLoginForm() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    if (!username || !password) {
+        alert('Veuillez remplir tous les champs');
+        return false;
+    }
+    return true;
+}
+
+// Fonction de validation du formulaire d'inscription
+function validateRegisterForm() {
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (!username || !password || !confirmPassword) {
+        alert('Veuillez remplir tous les champs');
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Les mots de passe ne correspondent pas');
+        return false;
+    }
+
+    return true;
+}
+
+// Ajouter un gestionnaire d'événements pour la soumission des formulaires
+document.querySelector('#login-section .form button').addEventListener('click', (event) => {
+    event.preventDefault(); // Empêche l'envoi du formulaire avant validation
+    if (validateLoginForm()) {
+        // Soumettre le formulaire ou effectuer d'autres actions
+        console.log('Formulaire de connexion validé');
+    }
+});
+
+document.querySelector('#register-section .form button').addEventListener('click', (event) => {
+    event.preventDefault(); // Empêche l'envoi du formulaire avant validation
+    if (validateRegisterForm()) {
+        // Soumettre le formulaire ou effectuer d'autres actions
+        console.log('Formulaire d\'inscription validé');
+    }
+});
+
 // Écouteur d'événements pour s'assurer que tout est chargé avant exécution
 document.addEventListener('DOMContentLoaded', () => {
     const themeButton = document.getElementById('toggle-theme');
