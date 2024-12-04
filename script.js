@@ -1,76 +1,62 @@
 // script.js
 
-// Fonction pour appliquer le thème à partir du stockage local
-function applyThemeFromLocalStorage() {
-    const savedTheme = localStorage.getItem('theme');
-    const body = document.body;
-
-    // Si un thème est enregistré, l'appliquer
-    if (savedTheme) {
-        body.classList.remove('light-theme', 'dark-theme'); // Retirer les deux classes
-        body.classList.add(savedTheme); // Appliquer le thème sauvegardé
-    } else {
-        // Si aucun thème n'est enregistré, appliquer le thème clair par défaut
-        body.classList.add('light-theme');
-    }
-}
-
-// Charger le thème lors du chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-    applyThemeFromLocalStorage();
-
-    // Initialiser le texte du bouton en fonction du thème actuel
-    const body = document.body;
-    const themeToggleButton = document.getElementById('theme-toggle');
-    if (body.classList.contains('dark-theme')) {
-        themeToggleButton.textContent = 'Mode clair';
-    } else {
-        themeToggleButton.textContent = 'Mode sombre';
-    }
-});
-
-// Basculement entre les modes de thème
+// Gestion du thème sombre/claire
 const themeToggleButton = document.getElementById('theme-toggle');
-
 themeToggleButton.addEventListener('click', () => {
     const body = document.body;
-
-    // Basculer entre les classes de thème
     if (body.classList.contains('light-theme')) {
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
-        themeToggleButton.textContent = 'Mode clair'; // Changer le texte du bouton
-        localStorage.setItem('theme', 'dark-theme'); // Sauvegarder le thème sombre
+        themeToggleButton.textContent = 'Mode clair';
+        localStorage.setItem('theme', 'dark-theme');
     } else {
         body.classList.remove('dark-theme');
         body.classList.add('light-theme');
-        themeToggleButton.textContent = 'Mode sombre'; // Changer le texte du bouton
-        localStorage.setItem('theme', 'light-theme'); // Sauvegarder le thème clair
+        themeToggleButton.textContent = 'Mode sombre';
+        localStorage.setItem('theme', 'light-theme');
     }
 });
 
-// Gérer la navigation entre les pages avec animation
-document.querySelectorAll('.transition-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();  // Empêcher la redirection immédiate
-
-        // Ajouter la classe slide-out-right pour la page actuelle
-        document.body.classList.add('slide-out-right');
-
-        // Récupérer l'URL du lien
-        const targetUrl = link.getAttribute('href');
-
-        // Après que l'animation se soit terminée (1 seconde), rediriger vers la nouvelle page
-        setTimeout(() => {
-            window.location.href = targetUrl;  // Rediriger vers l'URL récupérée
-        }, 1000); // Attendre que l'animation dure 1 seconde
-    });
+// Appliquer le thème enregistré au chargement
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);
+    }
 });
 
-// Assurer que la page d'accueil se recharge correctement après redirection
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname === 'index.html') {
-        // Forcer un léger rafraîchissement si la page d'accueil est vide
-        window.location.reload();
-    }
+// Interaction pour les boutons "Se connecter" et "S'inscrire"
+const loginBtn = document.getElementById('login-btn');
+const signupBtn = document.getElementById('signup-btn');
+const loginSection = document.getElementById('login-section');
+const signupSection = document.getElementById('signup-section');
+const welcomeSection = document.getElementById('welcome-section');
+const backBtnLogin = document.getElementById('back-btn-login');
+const backBtnSignup = document.getElementById('back-btn-signup');
+
+// Afficher le formulaire de login
+loginBtn.addEventListener('click', () => {
+    welcomeSection.classList.add('hidden');
+    loginSection.classList.remove('hidden');
+    loginSection.classList.add('active');
+});
+
+// Afficher le formulaire d'inscription
+signupBtn.addEventListener('click', () => {
+    welcomeSection.classList.add('hidden');
+    signupSection.classList.remove('hidden');
+    signupSection.classList.add('active');
+});
+
+// Retour à la page d'accueil
+backBtnLogin.addEventListener('click', () => {
+    loginSection.classList.remove('active');
+    loginSection.classList.add('hidden');
+    welcomeSection.classList.remove('hidden');
+});
+
+backBtnSignup.addEventListener('click', () => {
+    signupSection.classList.remove('active');
+    signupSection.classList.add('hidden');
+    welcomeSection.classList.remove('hidden');
 });
