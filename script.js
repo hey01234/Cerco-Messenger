@@ -15,6 +15,7 @@ document.querySelectorAll('.transition-link').forEach(link => {
         }, 1000); // Attendre que l'animation dure 1 seconde
     });
 });
+
 // Récupérer le bouton de basculement du thème
 const themeToggleButton = document.getElementById('theme-toggle');
 
@@ -27,20 +28,27 @@ themeToggleButton.addEventListener('click', () => {
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
         themeToggleButton.textContent = 'Mode clair'; // Changer le texte du bouton
+        localStorage.setItem('theme', 'dark'); // Sauvegarder le thème sombre dans le localStorage
     } else {
         body.classList.remove('dark-theme');
         body.classList.add('light-theme');
         themeToggleButton.textContent = 'Mode sombre'; // Changer le texte du bouton
+        localStorage.setItem('theme', 'light'); // Sauvegarder le thème clair dans le localStorage
     }
 });
 
 // Initialiser le texte du bouton en fonction du thème actuel
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
+    const savedTheme = localStorage.getItem('theme'); // Récupérer le thème enregistré dans localStorage
 
-    if (body.classList.contains('dark-theme')) {
-        themeToggleButton.textContent = 'Mode clair';
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        body.classList.remove('light-theme');
+        themeToggleButton.textContent = 'Mode clair'; // Changer le texte du bouton si le thème est sombre
     } else {
-        themeToggleButton.textContent = 'Mode sombre';
+        body.classList.add('light-theme');
+        body.classList.remove('dark-theme');
+        themeToggleButton.textContent = 'Mode sombre'; // Changer le texte du bouton si le thème est clair
     }
 });
