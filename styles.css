@@ -41,6 +41,7 @@ main .welcome-text {
     display: flex;
     gap: 10px;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .btn {
@@ -50,6 +51,8 @@ main .welcome-text {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    border: none;
 }
 
 .btn.primary {
@@ -69,4 +72,35 @@ main .welcome-text {
 
 .btn.secondary:hover {
     background-color: #e6f0fc;
+}
+
+.hidden {
+    display: none;
+}
+
+.form {
+    text-align: left;
+}
+
+.form h2 {
+    text-align: center;
+    color: #0078d7;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form button {
+    width: 100%;
 }
