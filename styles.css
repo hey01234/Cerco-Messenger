@@ -1,139 +1,146 @@
-/* styles.css */
-
-/* Styles généraux */
-body {
-    font-family: Arial, sans-serif;
+/* Base Styles */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    transition: background-color 0.5s;
+    box-sizing: border-box;
 }
 
-/* Thème clair */
-.light-theme {
-    background-color: #f4f4f4;
-    color: #000;
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Thème sombre */
-.dark-theme {
-    background-color: #333;
-    color: #fff;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Boutons généraux */
 button {
-    padding: 10px 20px;
-    border: none;
     cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Boutons principaux */
-.btn.primary {
+/* Button Styles */
+.theme-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+.btn {
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 12px 20px;
+}
+
+.primary {
     background-color: #007bff;
     color: white;
 }
 
-/* Bouton de retour */
-.btn.back-btn {
+.primary:hover {
+    background-color: #0056b3;
+}
+
+.back-btn {
     background-color: #ccc;
+    color: #333;
 }
 
-/* Liens de navigation (Se connecter / S'inscrire) */
-.nav-links {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+.back-btn:hover {
+    background-color: #999;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 18px;
-}
-
-/* Conteneur des formulaires */
+/* Main Container */
+.main-container,
 .form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    max-width: 500px;
-    margin: auto;
 }
 
-/* Cacher les sections par défaut */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form Section Styles */
 .form-section {
-    display: none;
+    margin: 20px 0;
+    display: none; /* Hidden by default */
 }
 
-/* Afficher la section active */
 .form-section.active {
-    display: block;
+    display: block; /* Display the active form */
 }
 
-/* Masquer des éléments */
 .hidden {
     display: none;
-}
-
-/* Style pour l'animation */
-.form-section.active {
-    display: block;
-}
-
-/* Bouton de changement de thème */
-.theme-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-/* Positionner le conteneur principal (accueil ou autres) */
-.main-container {
-    text-align: center;
-}
-
-/* Styles supplémentaires pour les formulaires (centrés et avec un peu de marge) */
-h2 {
-    margin-bottom: 20px;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
-/* Style pour les boutons dans les formulaires */
-form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
 }
 
-/* Style du bouton retour à l'accueil */
-a button.back-btn {
-    width: auto;
-    margin-top: 20px;
-    background-color: #ccc;
+/* Navigation Links */
+.nav-links a {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Theme Styles */
+.light-theme {
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Styles spécifiques pour les formulaires sur la page de login/signup */
-#login-form, #signup-form {
-    display: none;
+.dark-theme {
+    background-color: #181818;
+    color: #ddd;
 }
 
-#login-form.active,
-#signup-form.active {
-    display: block;
+/* Theme-specific styles for buttons */
+.light-theme .btn.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.dark-theme .btn.primary {
+    background-color: #444;
+    color: white;
+}
+
+.light-theme .btn.primary:hover {
+    background-color: #0056b3;
+}
+
+.dark-theme .btn.primary:hover {
+    background-color: #333;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
 }
