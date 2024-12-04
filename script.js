@@ -25,22 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Gestion de la navigation entre les formulaires
+// Sélectionner les formulaires et les liens
 const loginLink = document.getElementById('login-link');
 const signupLink = document.getElementById('signup-link');
 const loginForm = document.getElementById('login-form');
 const signupForm = document.getElementById('signup-form');
 
+// Afficher le formulaire de connexion par défaut
+loginForm.classList.remove('hidden');
+signupForm.classList.add('hidden');
+
 // Afficher le formulaire de connexion
 loginLink.addEventListener('click', (e) => {
     e.preventDefault();
-    loginForm.classList.add('active');
-    signupForm.classList.remove('active');
+    loginForm.classList.remove('hidden');
+    signupForm.classList.add('hidden');
 });
 
 // Afficher le formulaire d'inscription
 signupLink.addEventListener('click', (e) => {
     e.preventDefault();
-    signupForm.classList.add('active');
-    loginForm.classList.remove('active');
+    signupForm.classList.remove('hidden');
+    loginForm.classList.add('hidden');
 });
