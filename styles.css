@@ -13,30 +13,37 @@ body {
     transition: background-color 0.5s;
 }
 
+/* Thème clair */
 .light-theme {
     background-color: #f4f4f4;
+    color: #000;
 }
 
+/* Thème sombre */
 .dark-theme {
     background-color: #333;
     color: #fff;
 }
 
+/* Boutons généraux */
 button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
 }
 
+/* Boutons principaux */
 .btn.primary {
     background-color: #007bff;
     color: white;
 }
 
+/* Bouton de retour */
 .btn.back-btn {
     background-color: #ccc;
 }
 
+/* Liens de navigation (Se connecter / S'inscrire) */
 .nav-links {
     display: flex;
     justify-content: space-around;
@@ -49,18 +56,24 @@ button {
     font-size: 18px;
 }
 
+/* Conteneur des formulaires */
 .form-container {
     text-align: center;
+    max-width: 500px;
+    margin: auto;
 }
 
+/* Cacher les sections par défaut */
 .form-section {
     display: none;
 }
 
+/* Afficher la section active */
 .form-section.active {
     display: block;
 }
 
+/* Masquer des éléments */
 .hidden {
     display: none;
 }
@@ -70,12 +83,57 @@ button {
     display: block;
 }
 
+/* Bouton de changement de thème */
 .theme-btn {
     position: absolute;
     top: 20px;
     right: 20px;
 }
 
+/* Positionner le conteneur principal (accueil ou autres) */
 .main-container {
     text-align: center;
+}
+
+/* Styles supplémentaires pour les formulaires (centrés et avec un peu de marge) */
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style pour les boutons dans les formulaires */
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style du bouton retour à l'accueil */
+a button.back-btn {
+    width: auto;
+    margin-top: 20px;
+    background-color: #ccc;
+    color: #333;
+}
+
+/* Styles spécifiques pour les formulaires sur la page de login/signup */
+#login-form, #signup-form {
+    display: none;
+}
+
+#login-form.active,
+#signup-form.active {
+    display: block;
 }
