@@ -22,11 +22,41 @@
             </p>
 
             <div class="buttons">
-                <a href="/signup" class="btn primary">S'inscrire</a>
-                <a href="/login" class="btn secondary">Se connecter</a>
+                <button class="btn primary" id="login-btn">Se connecter</button>
+                <button class="btn secondary" id="signup-btn">S'inscrire</button>
+            </div>
+
+            <!-- Formulaire de connexion -->
+            <div id="login-form" class="form hidden">
+                <h2>Se connecter</h2>
+                <form action="/login" method="POST">
+                    <label for="login-id">Identifiant</label>
+                    <input type="text" id="login-id" name="id" required placeholder="Entrez votre ID">
+
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" name="password" required placeholder="Entrez votre mot de passe">
+
+                    <button type="submit" class="btn primary">Connexion</button>
+                </form>
+            </div>
+
+            <!-- Formulaire d'inscription -->
+            <div id="signup-form" class="form hidden">
+                <h2>Créer un compte</h2>
+                <form action="/signup" method="POST">
+                    <label for="signup-id">Identifiant</label>
+                    <input type="text" id="signup-id" name="id" required placeholder="Choisissez un ID">
+
+                    <label for="signup-password">Mot de passe</label>
+                    <input type="password" id="signup-password" name="password" required placeholder="Définissez un mot de passe">
+
+                    <button type="submit" class="btn primary">S'inscrire</button>
+                </form>
             </div>
         </main>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
