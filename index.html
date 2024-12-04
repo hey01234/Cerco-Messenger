@@ -3,55 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerco Messenger</title>
+    <title>Accueil - Cerco Messenger</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light-theme">
     <button id="theme-toggle" class="theme-btn">Mode sombre</button>
 
     <div class="main-container">
-        <!-- Page d'accueil -->
-        <div id="welcome-section">
-            <h1>Bienvenue sur Cerco Messenger</h1>
-            <p>N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien ! 👍</p>
-            <p>💰💸</p>
+        <h1>Bienvenue sur Cerco Messenger</h1>
+        <p>N'hésitez pas à entrer en contact avec les autres, à partager avec eux et à faire de nouvelles rencontres. Amusez-vous bien ! 👍</p>
 
-            <button id="login-btn" class="btn primary">Se connecter</button>
-            <button id="signup-btn" class="btn secondary">S'inscrire</button>
-        </div>
-
-        <!-- Formulaire de Connexion -->
-        <div id="login-section" class="form-container hidden">
-            <button class="btn back-btn" id="back-btn-login">Retour</button>
-            <h2>Se connecter</h2>
-            <form action="#" method="POST">
-                <label for="user-id">ID</label>
-                <input type="text" id="user-id" name="user-id" placeholder="Entrez votre ID" required>
-
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
-
-                <button type="submit" class="btn primary">Se connecter</button>
-            </form>
-        </div>
-
-        <!-- Formulaire d'Inscription -->
-        <div id="signup-section" class="form-container hidden">
-            <button class="btn back-btn" id="back-btn-signup">Retour</button>
-            <h2>S'inscrire</h2>
-            <form action="#" method="POST">
-                <label for="new-user-id">ID</label>
-                <input type="text" id="new-user-id" name="new-user-id" placeholder="Entrez votre ID" required>
-
-                <label for="new-password">Mot de passe</label>
-                <input type="password" id="new-password" name="new-password" placeholder="Définir un mot de passe" required>
-
-                <label for="confirm-password">Confirmer le mot de passe</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmer votre mot de passe" required>
-
-                <button type="submit" class="btn primary">S'inscrire</button>
-            </form>
-        </div>
+        <!-- Bouton qui redirige vers la page de login/signup -->
+        <a href="login-signup.html">
+            <button class="btn primary">S'inscrire / Se connecter</button>
+        </a>
     </div>
 
     <script src="script.js"></script>
