@@ -51,26 +51,36 @@ button {
     background-color: #007bff;
     color: white;
 }
-/* Style pour la barre de navigation */
+/* Barre de navigation */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ddd;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar-logo .logo {
-    height: 40px;
-    width: 40px;
-    object-fit: contain;
+/* Logo à droite */
+.navbar-logo {
+    margin-left: auto; /* Pousse le logo à droite */
 }
 
+/* Bouton à gauche */
 .navbar-menu {
-    display: flex;
-    align-items: center;
+    margin-right: auto; /* Pousse le bouton à gauche */
 }
+
+/* Logo */
+.navbar-logo img {
+    width: 50px;
+    height: auto;
+}
+
 
 /* Styles pour le lien avec la flèche */
 .back-link {
