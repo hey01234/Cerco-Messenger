@@ -3,17 +3,18 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Thèmes */
 body.theme-light {
-    background-color: #f7fafc;
-    color: #1a202c;
+    background-color: #f7fafc; /* Gris clair */
+    color: #1a202c;           /* Texte sombre */
 }
 
 body.theme-dark {
-    background-color: #1a202c;
-    color: #f7fafc;
+    background-color: #1a202c; /* Gris foncé */
+    color: #edf2f7;            /* Texte clair */
 }
 
 /* Header */
@@ -21,7 +22,12 @@ body.theme-dark {
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
-    background-color: #e2e8f0;
+    background-color: #e2e8f0; /* Couleur claire pour le header */
+    transition: background-color 0.3s;
+}
+
+body.theme-dark .header {
+    background-color: #2d3748; /* Couleur foncée pour le header */
 }
 
 .theme-button {
@@ -30,6 +36,11 @@ body.theme-dark {
     cursor: pointer;
     font-size: 1.5rem;
     color: #3182ce;
+    transition: color 0.3s;
+}
+
+body.theme-dark .theme-button {
+    color: #63b3ed; /* Couleur ajustée pour le mode sombre */
 }
 
 .theme-button:hover {
@@ -60,7 +71,11 @@ body.theme-dark {
 
 .welcome-text p {
     font-size: 1rem;
-    color: #4a5568;
+    color: #4a5568; /* Texte secondaire */
+}
+
+body.theme-dark .welcome-text p {
+    color: #a0aec0; /* Texte secondaire en mode sombre */
 }
 
 /* Boutons */
@@ -74,10 +89,19 @@ body.theme-dark {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .primary-button:hover {
     background-color: #2b6cb0;
+}
+
+body.theme-dark .primary-button {
+    background-color: #63b3ed;
+}
+
+body.theme-dark .primary-button:hover {
+    background-color: #4299e1;
 }
 
 .back-button,
@@ -88,6 +112,12 @@ body.theme-dark {
     cursor: pointer;
     text-decoration: underline;
     margin: 1rem;
+    transition: color 0.3s;
+}
+
+body.theme-dark .back-button,
+body.theme-dark .switch-button {
+    color: #63b3ed;
 }
 
 .back-button:hover,
@@ -95,9 +125,15 @@ body.theme-dark {
     color: #2b6cb0;
 }
 
+body.theme-dark .back-button:hover,
+body.theme-dark .switch-button:hover {
+    color: #4299e1;
+}
+
 /* Sections */
 .section {
     padding: 2rem;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .hidden {
@@ -112,6 +148,12 @@ body.theme-dark {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.theme-dark .form {
+    background-color: #2d3748; /* Arrière-plan foncé */
+    color: #edf2f7;           /* Texte clair */
 }
 
 .form label {
@@ -127,4 +169,24 @@ body.theme-dark {
     border: 1px solid #e2e8f0;
     border-radius: 5px;
     box-sizing: border-box;
+    background-color: #f7fafc;
+    color: #1a202c;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #3182ce;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.3);
+}
+
+body.theme-dark .form-input {
+    background-color: #4a5568;
+    color: #edf2f7;
+    border-color: #2d3748;
+}
+
+body.theme-dark .form-input:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
 }
