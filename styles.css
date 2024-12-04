@@ -1,4 +1,7 @@
-/* Base Styles */
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,228 +9,145 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    margin: 0;
-    position: relative;
+    line-height: 1.6;
 }
 
-/* Lien et boutons */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Button Styles */
-.theme-btn {
-    background-color: transparent;
-    border: 2px solid #007bff;
-    color: #007bff;
-    border-radius: 25px;
-    padding: 8px 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.theme-btn:hover {
+header {
     background-color: #007bff;
     color: white;
-    transform: scale(1.05); /* Légère augmentation de la taille au survol */
-}
-
-/* Barre de navigation */
-.navbar {
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    border-bottom: 2px solid #ddd;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour la navbar */
 }
 
-/* Logo à droite */
-.navbar-logo {
-    margin-left: auto; /* Pousse le logo à droite */
-}
-
-/* Bouton à gauche */
-.navbar-menu {
-    margin-right: auto; /* Pousse le bouton à gauche */
-}
-
-/* Logo */
 .navbar-logo img {
-    width: 50px;
-    height: auto;
+    height: 50px;
 }
 
-/* Styles pour le lien avec la flèche */
+.navbar-menu {
+    display: flex;
+}
+
+.theme-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .back-link {
-    display: inline-flex;
-    align-items: center;
-    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 20px;
     color: #007bff;
-    margin-top: 10px;
-}
-
-.back-arrow {
-    font-size: 24px;
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-}
-
-.back-link:hover .back-arrow {
-    transform: translateX(-5px); /* Petite animation pour la flèche */
+    text-decoration: none;
 }
 
 .back-link:hover {
     text-decoration: underline;
 }
 
-/* Main Container */
-.main-container,
-.form-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px 20px; /* Réduit le padding pour un look plus compact */
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
-    border-radius: 10px;
-    background-color: #fff; /* Fond blanc pour le conteneur principal */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.main-container:hover,
-.form-container:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
+.nav-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.light-theme .main-container,
-.light-theme .form-container {
-    background-color: #f4f4f4;
+.nav-links a.active {
+    border-bottom: 2px solid #007bff;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
     color: #333;
 }
 
-.dark-theme .main-container,
-.dark-theme .form-container {
-    background-color: #181818;
-    color: #ddd;
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
-/* Heading Styles */
-h1, h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #007bff; /* Couleur des titres */
-}
-
-/* Form Styles */
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ombre au focus */
+    outline: none;
 }
 
-button.primary {
+.btn {
     background-color: #007bff;
     color: white;
-    padding: 12px 20px;
-    font-size: 16px;
+    border: none;
+    padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button.primary:hover {
+.btn.primary:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
 
-/* Navigation Links */
-.nav-links a {
-    margin: 0 10px;
-    font-size: 16px;
-    color: #007bff;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* Theme Styles */
-.light-theme {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.dark-theme {
-    background-color: #181818;
-    color: #ddd;
-}
-
-/* Theme-specific styles for buttons */
-.light-theme .btn.primary {
+footer {
+    text-align: center;
+    padding: 10px 0;
     background-color: #007bff;
     color: white;
-}
-
-.dark-theme .btn.primary {
-    background-color: #444;
-    color: white;
-}
-
-.light-theme .btn.primary:hover {
-    background-color: #0056b3;
-}
-
-.dark-theme .btn.primary:hover {
-    background-color: #333;
-}
-
-/* Utility Classes */
-.hidden {
-    display: none;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Responsive Design */
-@media screen and (max-width: 767px) {
-    .main-container,
+@media (max-width: 600px) {
     .form-container {
+        padding: 15px;
+    }
+
+    .theme-btn {
+        padding: 5px 8px;
+    }
+
+    .btn {
         width: 100%;
-        padding: 20px 15px;
-        max-width: 100%;
-        box-shadow: none;
     }
 }
