@@ -1,5 +1,22 @@
 /* styles.css */
+/* Style pour le bouton de retour */
+.back-btn {
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
+.back-btn:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
 /* Styles généraux */
 body {
     font-family: Arial, sans-serif;
