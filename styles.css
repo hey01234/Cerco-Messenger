@@ -55,8 +55,9 @@ button {
     transition: transform 0.5s ease-in-out;
 }
 
-.form-container.hidden {
-    transform: translateX(100%);
+.form-container.active {
+    display: block;
+    transform: translateX(0);
 }
 
 #login-section, #signup-section {
