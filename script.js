@@ -1,16 +1,12 @@
 // script.js
-
-// Gérer la transition entre les pages (ajouter l'animation)
 document.querySelectorAll('.transition-link').forEach(link => {
     link.addEventListener('click', function(e) {
-        // Ajouter la classe fade-out pour l'animation
-        document.body.classList.add('fade-out');
-
-        // Après la fin de l'animation, rediriger vers la nouvelle page
+        document.body.classList.add('slide-out-right');
+        
         setTimeout(() => {
             window.location.href = e.target.href;
-        }, 1000); // Délai pour que l'animation soit terminée avant la redirection
-        e.preventDefault(); // Empêcher la redirection immédiate
+        }, 1000);
+        e.preventDefault();
     });
 });
 // Récupérer le bouton de basculement du thème
