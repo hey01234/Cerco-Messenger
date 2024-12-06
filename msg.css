@@ -1,0 +1,225 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.menu-icon, .search-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Sidebar Menu */
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #1e1e1e;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin-bottom: 15px;
+}
+
+.menu-list a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.close-menu {
+  background-color: #ff5555;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Chat List */
+.chat-list {
+  margin-top: 20px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.chat-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.chat-info {
+  flex-grow: 1;
+}
+
+.chat-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.chat-message {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+.chat-time {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+/* Chat Box */
+.chat-box {
+  margin-top: 20px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chat-title {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.messages {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.message-input-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  background: #333;
+  color: #fff;
+}
+
+.send-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Définition des thèmes */
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #007bff;
+  --secondary-color: #1e1e1e;
+}
+
+.light-theme {
+  --bg-color: #f9f9f9;
+  --text-color: #121212;
+  --primary-color: #007bff;
+  --secondary-color: #ffffff;
+}
+
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header, .menu, .chat-list, .chat-box {
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+.chat-item, .menu-list li {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.chat-item:hover, .menu-list li:hover {
+  transform: scale(1.05);
+}
+
+/* ... reste du CSS similaire avec des transitions ajoutées pour les boutons et le menu */
+
+/* Compteur de messages non lus */
+.unread-count {
+  background-color: #ff5555;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
