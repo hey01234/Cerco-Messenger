@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil & Paramètres</title>
+  <link rel="stylesheet" href="set.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="combined-page">
+    <!-- Header -->
+    <header class="main-header">
+      <button id="back-button" class="btn-icon">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button id="logout-button" class="btn logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Déconnexion
+      </button>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <div class="profile-info">
+        <div class="avatar-container">
+          <div class="avatar">
+            <img src="/placeholder.svg" alt="User Avatar">
+          </div>
+          <button class="btn-icon camera-icon">
+            <i class="fas fa-camera"></i>
+          </button>
+        </div>
+        <h1 class="profile-name">Hono</h1>
+        <p class="profile-status online"><i class="fas fa-circle"></i> En ligne</p>
+      </div>
+      <div class="profile-details">
+        <h2 class="section-title"><i class="fas fa-user"></i> Informations du profil</h2>
+        <div class="info-item">
+          <p class="info-value">+229 43313412</p>
+          <p class="info-label"><i class="fas fa-phone"></i> Mobile</p>
+        </div>
+        <div class="info-item">
+          <div>
+            <p class="info-value">ID : JOSE4003</p>
+            <p class="info-label"><i class="fas fa-user-tag"></i> Identifiant</p>
+          </div>
+          <button class="btn-icon">
+            <i class="fas fa-edit"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="settings-section">
+      <details>
+  <summary class="section-title"><i class="fas fa-cogs"></i>Paramètres</summary>
+      
+      <div id="settings-content" class="settings-content">
+        <div class="setting-item">
+          <div class="setting-label">
+            <span id="theme-icon">☀️</span>
+            <span>Thème <span id="theme-name">clair</span></span>
+          </div>
+          <input type="checkbox" id="theme-switch" class="switch">
+        </div>
+        <div class="setting-item">
+          <div class="setting-label">
+            <i class="fas fa-bell"></i>
+            <span>Notifications push</span>
+          </div>
+          <input type="checkbox" id="notifications-switch" class="switch" checked>
+        </div>
+        <div class="setting-item">
+          <div class="setting-label">
+            <i class="fas fa-volume-up"></i>
+            <span>Sons</span>
+          </div>
+          <input type="checkbox" id="sound-switch" class="switch" checked>
+        </div>
+        <div class="setting-item">
+          <div class="setting-label">
+            <i class="fas fa-language"></i>
+            <span>Langue de l'application</span>
+          </div>
+          <select id="language-select" class="select">
+            <option value="Français">Français</option>
+            <option value="English">English</option>
+            <option value="Español">Español</option>
+          </select>
+        </div>
+      </div>
+          <!-- Save Button -->
+    <div class="save-button-container">
+      <button id="save-button" class="btn"><i class="fas fa-save"></i> Sauvegarder les modifications</button>
+    </div>
+      </details>
+    </section>
+
+
+  </div>
+  <script src="set.js"></script>
+</body>
+</html>
